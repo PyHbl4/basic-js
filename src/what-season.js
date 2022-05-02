@@ -12,7 +12,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
-  let seasonError = new Error('Invalid date!')
   if (!date) {
     return 'Unable to determine the time of year!';
   }
@@ -26,7 +25,7 @@ function getSeason(date) {
     } else if (date.getMonth() === 8 || date.getMonth() === 9 || date.getMonth() === 10) {
       return 'autumn';
     }
-  } else throw false;
+  } else throw new Error('Invalid date!');
 }
 
 module.exports = {
