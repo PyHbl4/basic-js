@@ -43,6 +43,7 @@ function transform(arr) {
       }
     } else {
       result.push(array[i]);
+      i = i + 1;
     }
   }
   return result;
