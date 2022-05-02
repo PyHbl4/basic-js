@@ -31,9 +31,11 @@ function transform(arr) {
         i = i + 1;
       }
     } else if (array[i] === '--double-next'){
+      if (array[i + 1]){
       result.push(array[i + 1]);
       result.push(array[i + 1]);
       i = i + 2;
+      } else {i = i + 1}
     } else if (array[i] === '--double-prev'){
       if(result.length > 0){
         result.push(array[i - 1]);
@@ -41,6 +43,8 @@ function transform(arr) {
       } else {
         i = i + 1;
       }
+    } else if (!array[i]){
+      i = i + 1;
     } else {
       result.push(array[i]);
       i = i + 1;
